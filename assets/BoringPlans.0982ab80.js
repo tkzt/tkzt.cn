@@ -1,1 +1,0 @@
-import{s as o,j as n,e as c,f as s,k as e,l as r,m as a,c as l}from"./index.70c58ba2.js";const _={},d=l("br",null,null,-1);function i(u,f){const t=n("RouterLink");return c(),s("div",null,[e(" Under construction :) "),d,r(t,{to:"/"},{default:a(()=>[e("Back")]),_:1})])}const k=o(_,[["render",i]]);export{k as default};
