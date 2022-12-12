@@ -1,0 +1,1 @@
+import{j as o,k as n,e as c,f as r,l as e,m as s,q as a,c as l}from"./index.a52ba07d.js";const _={},i=l("br",null,null,-1);function d(u,f){const t=n("RouterLink");return c(),r("div",null,[e(" Under construction :) "),i,s(t,{to:"/"},{default:a(()=>[e("Back")]),_:1})])}const k=o(_,[["render",d]]);export{k as default};
