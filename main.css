@@ -1,0 +1,37 @@
+:root {
+  --tkzt-primary: #ddd6fe;
+  --tkzt-primary-dark: #c4b5fd;
+}
+
+body {
+  --at-apply: font-sans ma-0;
+}
+
+.caption {
+  --at-apply: dark:c-gray-400 c-gray-500 text-xs hover:text-gray-900 dark:hover:text-gray-100;
+}
+
+.text-btn {
+  --at-apply: cursor-pointer hover:underline decoration-none;
+}
+
+html.dark body {
+  --at-apply: bg-#131130 c-white;
+}
+
+html.dark body {
+  color-scheme: dark;
+}
+
+html.dark body {
+  --tkzt-primary: #a78bfa;
+  --tkzt-primary-dark: #c4b5fd;
+}
+
+.prose-img {
+  --at-apply: important:rounded-lg;
+}
+
+p:has(> .prose-img) {
+  --at-apply: flex justify-center;
+}
