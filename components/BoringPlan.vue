@@ -32,7 +32,7 @@ function toWork(link) {
 <style scoped>
 .work {
   --at-apply: flex items-center cursor-pointer shrink-0 w-[calc(100%-24px)] ma-12px relative w-100% md:w-30%;
-  --at-apply: after:(pointer-events-none w-[calc(100%+12px)] h-[calc(100%+12px)]);
+  --at-apply: "after:(pointer-events-none w-[calc(100%+12px)] h-[calc(100%+12px)])";
   --at-apply: "after:(absolute rd-8px top--6px left--6px content-[''])";
   --at-apply: "after:(hover:bg-[rgba(0,0,0,.03)] active:bg-[rgba(0,0,0,.06)])";
   --at-apply: "after:(dark:hover:bg-[rgba(255,255,255,.06)] dark:active:bg-[rgba(255,255,255,.03)])";

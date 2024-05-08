@@ -81,13 +81,18 @@ onMounted(async () => {
     return group
   })
   Object.keys(blogsLocal).sort().forEach(b => {
-    blogGroups.splice(blogGroups.findIndex(a => a.year < b), 0, {
+    const leftTargetIndex = blogGroups.findIndex(a => +a.year < +b)
+    blogGroups.splice(leftTargetIndex === -1 ? blogGroups.length : leftTargetIndex, 0, {
       year: b,
       list: blogsLocal[+b]
     })
   })
   groups.value = blogGroups
   loading.value = false
+})
+
+onBeforeRouteLeave(() => {
+  loading.value = true
 })
 </script>
 

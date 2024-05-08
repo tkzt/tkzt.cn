@@ -57,11 +57,6 @@ const reactor = ref('')
 const emojis = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀']
 
 const fpPromise = FingerprintJS.load();
-(async () => {
-  const fp = await fpPromise
-  const result = await fp.get()
-  reactor.value = result.visitorId
-})()
 
 function react(reaction) {
   useFetch('/api/reactions', { method: 'post', body: { reaction, reactor, action: 'add' } })
@@ -73,10 +68,16 @@ function unreact(reaction) {
 
 async function getReactions() {
   const { reactions } = await (
-    await fetch(`/api/reactions?${emojis.map(e => 'emojis=' + encodeURI(e)).join('&')}`, { method: 'get' })
+    await fetch(`/api/reactions?emojis=${emojis.join(',')}`, { method: 'get' })
   ).json()
   return reactions || []
 }
+
+onMounted(async () => {
+  const fp = await fpPromise
+  const result = await fp.get()
+  reactor.value = result.visitorId
+})
 </script>
 
 <style scoped>

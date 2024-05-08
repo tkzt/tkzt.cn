@@ -9,7 +9,7 @@
     <ul class="relative">
       <li v-for="{ title, date, link, local }, idx in list" :key="idx" target="_blank"
         class="list-none">
-        <a :href="link" class="c-inherit decoration-none" target="_blank">
+        <a class="c-inherit decoration-none cursor-pointer" @click="toBlog(link, !!local)">
           <div class="overflow-hidden flex">
             <div
               class="text-truncate text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
@@ -34,8 +34,20 @@
 import dayjs from 'dayjs'
 
 const containerRef = ref<HTMLDivElement>()
+const router = useRouter()
 
 defineProps<BlogGroup>()
+
+function toBlog(to: string, local: boolean) {
+  if (local) {
+    router.push(to)
+  } else {
+    const a = document.createElement('a')
+    a.target = '_blank'
+    a.href = to
+    a.click()
+  }
+}
 </script>
 
 <style></style>
