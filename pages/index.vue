@@ -11,7 +11,7 @@
             class="link">蠡湖专科<i class="outlink">
             </i></a>，继而成为一名新生代农民工；目前在<a href="https://iot.tcl.com/" target="_blank"
             class="link">这个工地<i
-              class="outlink"></i></a>搬砖；生性胆小，爱好和平，不善表达，嗜睡，同时喜爱武侠与科幻；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a
+              class="outlink"></i></a>搬砖；生性胆小，爱好和平，不善表达，嗜睡，同时喜爱武侠与科幻；厌恶流式返回；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a
             class="link"
             @click="$router.push('/blogs/some_work_work')">屎山</a>，艰难积攒财富的同时，轻易地得到了肥胖、肩颈疾病、高血压；是一个<a
             href="https://fine-weather-gallery.tkzt.cn" target="_blank" class="link">好天气摄影<i
