@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   if (action && reactor) {
     if (action === 'add' && !reactions.includes(reactor)) {
       reactions.push(reactor)
-    } else if (action === 'remove' && reaction.includes(reactor)) {
+    } else if (action === 'remove' && reactions.includes(reactor)) {
       reactions.splice(reactions.indexOf(reactor), 1)
     }
     await dataStorage.setItem(reaction, reactions)
