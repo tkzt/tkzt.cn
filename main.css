@@ -7,14 +7,6 @@ body {
   --at-apply: font-sans ma-0;
 }
 
-.caption {
-  --at-apply: dark:c-gray-400 c-gray-500 text-xs hover:text-gray-900 dark:hover:text-gray-100;
-}
-
-.text-btn {
-  --at-apply: cursor-pointer hover:underline decoration-none;
-}
-
 html.dark body {
   --at-apply: bg-#131130 c-white;
 }

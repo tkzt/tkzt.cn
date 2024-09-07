@@ -1,10 +1,9 @@
 <template>
   <div class="flex min-h-dvh w-full">
-    <div class="ma-auto px-8% lg:px-15% 2xl:px-20% flex flex-col py-6 w-100%"
-      :class="{ 'md:w-80%': blogPage }">
+    <div class="ma-auto px-8% lg:px-15% 2xl:px-20% flex flex-col py-6 w-100%">
       <slot />
-      <div class="flex items-center c-gray-500 mt-6">
-        <div class="caption hover:dark:c-gray-400 hover:c-gray-500 ">
+      <div class="flex items-center c-gray-500 mt-6" :class="{ 'md:ml-10%': blogPage }">
+        <div class="caption">
           &copy; {{ new Date().getFullYear() }}
           <span class="ml-1">Allen Tao</span>
         </div>
@@ -37,17 +36,7 @@ const home = computed(() => route.path === '/')
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
-const blogPage = ref(false)
-
-watchEffect(() => {
-  if (route.matched.at(0)?.path.startsWith('/:post')) {
-    nextTick(() => {
-      blogPage.value = true
-    })
-  } else {
-    blogPage.value = false
-  }
-})
+const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post'))
 </script>
 
 <style scoped></style>
