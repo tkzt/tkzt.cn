@@ -15,7 +15,8 @@
             <router-link title="Contact" class="text-btn caption" to="/contact">联系</router-link>
           </div>
         </template>
-        <a title="Back" class="text-btn caption" @click="$router.back()" v-else-if="blogPage">返回</a>
+        <a title="Back" class="text-btn caption" @click="$router.back()"
+          v-else-if="displayBack">返回</a>
         <router-link title="Recall" class="text-btn caption" to="/" v-else>回城</router-link>
         <div class="rotate-90 mx-3">-</div>
         <div class="flex items-center text-btn caption select-none" @click="toggleDark.call">
@@ -37,6 +38,7 @@ const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
 const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post'))
+const displayBack = computed(() => blogPage.value && !['/moments'].includes(route.path))
 </script>
 
 <style scoped></style>
