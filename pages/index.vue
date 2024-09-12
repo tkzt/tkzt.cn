@@ -9,8 +9,10 @@
         <div class="text-sm md:text-4 lh-6.18 tracking-.37 text-justify">
           于 2019 年毕业于<a href="https://www.bing.com/search?q=%E8%A0%A1%E4%B8%93" target="_blank"
             class="link">蠡湖专科<i class="outlink">
-            </i></a>，继而成为一名新生代农民工；最近在<a @click="$router.push('/moments')"
-            class="link">勇闯🔥焰山</a>；生性胆小，爱好和平，不善表达，嗜睡，同时喜爱武侠与科幻；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a
+            </i></a>，继而成为一名新生代农民工；最近在<client-only><a @click="$router.push('/moments')"
+              class="link">{{
+                recentMoment.title
+              }}</a></client-only>；生性胆小，爱好和平，不善表达，嗜睡，同时喜爱武侠与科幻；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a
             class="link"
             @click="$router.push('/blogs/some_work_work')">屎山</a>，艰难积攒财富的同时，轻易地得到了肥胖、肩颈疾病、高血压；是一个<a
             href="https://fine-weather-gallery.tkzt.cn" target="_blank" class="link">好天气摄影<i
@@ -49,13 +51,21 @@
 import { ref } from 'vue'
 import { EmojiReaction } from 'emoji-reaction/lib/index.esm'
 import FingerprintJS from '@fingerprintjs/fingerprintjs'
-import { useDark } from '@vueuse/core'
+import { asyncComputed, useDark } from '@vueuse/core'
+import dayjs from 'dayjs'
 
 const isDark = useDark()
 const reactor = ref('')
 const emojis = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀']
 
 const fpPromise = FingerprintJS.load();
+const recentMoment = asyncComputed(async () => {
+  const moments = (await queryContent('moments').find()).filter(m => m._path !== '/moments').sort((a, b) => (dayjs(b.date).diff(dayjs(a.date))) || 1)
+  return moments[0] || {
+    title: '...',
+    _path: '/'
+  }
+})
 
 function react(reaction) {
   useFetch('/api/reactions', { method: 'post', body: { reaction, reactor, action: 'add' } })

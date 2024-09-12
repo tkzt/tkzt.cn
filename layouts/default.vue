@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import { useRoute } from 'vue-router';
 
