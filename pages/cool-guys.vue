@@ -20,11 +20,10 @@
 import { ref } from 'vue'
 
 const coolGuys = ref([
-  { title: '祖师爷', href: 'https://evanyou.me/' },
   { title: 'Anthony Fu', href: 'https://antfu.me/' },
   { title: '李辉', href: 'https://greyli.com/' },
-  { title: 'SoonIter', href: 'https://sooniter.site/' },
   { title: '谢益辉', href: 'https://yihui.org/' },
-  { title: 'Juan', href: 'https://writee.org/huang-juan/' },
+  { title: 'yao', href: 'https://blog.xiaoxiaoren.icu/' },
+  { title: 'Jdeal', href: 'https://www.jdeal.cn/' },
 ])
 </script>
