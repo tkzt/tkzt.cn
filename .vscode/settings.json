@@ -1,3 +1,6 @@
 {
-  "typescript.format.semicolons": "remove"
+  "typescript.format.semicolons": "remove",
+  "cSpell.words": [
+    "Multipastes"
+  ]
 }
