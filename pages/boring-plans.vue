@@ -1,5 +1,5 @@
 <template>
-  <template v-for="{ title, list }, index in  works" :key="index">
+  <template v-for="{ title, list }, index in works" :key="index">
     <boring-plan :list="list" :title="title"
       :class="{ 'mt-4': index > 0, 'mb-4': index === works.length - 1 }" />
   </template>
@@ -10,19 +10,18 @@ import BoringPlan from '~/components/BoringPlan.vue'
 
 const works = [
   {
-    title: '🚧 构建',
+    title: '🚧',
+    list: []
+  },
+  {
+    title: '🥳',
     list: [
       {
         title: 'Multipaste',
         link: 'https://github.com/tkzt/multipaste',
-        logo: 'MTP',
-        description: '简洁的剪切板管理工具',
-      }
-    ]
-  },
-  {
-    title: '🥳 存活',
-    list: [
+        logo: 'https://raw.githubusercontent.com/tkzt/multipaste/1b629400649a8f1797ba856d9b2fdd79c05e69e7/src-tauri/icons/icon.ico',
+        description: '朴素的剪切板管理工具',
+      },
       {
         title: '一些晴朗的日子',
         link: 'https://fine-weather-gallery.tkzt.cn/',
@@ -48,12 +47,6 @@ const works = [
         description: 'Teleport Markdown: A chromium extension to help with online doc writing.'
       },
       {
-        title: 'Hex Map',
-        link: 'https://github.com/tkzt/hex-map',
-        logo: 'https://raw.githubusercontent.com/tkzt/hex-map/ed50da97ecf3c03cde5e7243120d69b08122b9e1/logo.svg',
-        description: '根据海克斯科技强化筛选优选阵容',
-      },
-      {
         title: 'DDT Sharp Shooter',
         link: 'https://github.com/tkzt/ddt-sharp-shooter',
         logo: 'https://raw.githubusercontent.com/tkzt/ddt-sharp-shooter/3e0d2fc02e0c6f3605bb818294400c5d8b1cee07/assets/logo.svg',
@@ -74,8 +67,14 @@ const works = [
     ]
   },
   {
-    title: '☠️ 死亡',
+    title: '☠️',
     list: [
+      {
+        title: 'Hex Map',
+        link: 'https://github.com/tkzt/hex-map',
+        logo: 'https://raw.githubusercontent.com/tkzt/hex-map/ed50da97ecf3c03cde5e7243120d69b08122b9e1/logo.svg',
+        description: '根据海克斯科技强化筛选优选阵容',
+      },
       {
         title: 'TMD Editor',
         link: 'https://github.com/tkzt/tmd-editor',

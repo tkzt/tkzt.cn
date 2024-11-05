@@ -1,8 +1,11 @@
 <template>
   <div>
     <div v-if="title" class="mb-4 font-bold">{{ title }}</div>
-    <div class="flex flex-wrap" :class="{ dead: title === '死亡' }">
-      <div class="work" v-for=" { title, link, description, logo }, index  in list" :key="index"
+    <div class="flex flex-wrap" :class="{ 'dead line-through': title.includes('☠️') }">
+      <div v-if="!list.length" class="text-gray-500 dark:text-gray-400 p-2 w-100% text-sm">Void but
+        Alive 🌱
+      </div>
+      <div class="work" v-for=" { title, link, description, logo }, index in list" :key="index"
         @click="toWork(link)">
         <img :src="logo" v-if="logo.startsWith('http')">
         <div v-else class="logo">
