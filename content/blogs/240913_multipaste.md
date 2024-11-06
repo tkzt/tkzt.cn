@@ -23,7 +23,7 @@ date: 2024-09-13
 
 首先，这个工具将有一个朴素的名字，比如 **Multipaste**。
 
-其次，这个工具将有一个图标。在 UCL 大佬 [Henry Zhu](https://www.instagram.com/henryz97222?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==) 的悉心指导下，一个~~好看的~~图标诞生了：
+其次，这个工具将有一个图标。在 UON 大佬 [Henry Zhu](https://www.instagram.com/henryz97222?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==) 的悉心指导下，一个~~好看的~~图标诞生了：
 
 ![multipaste_logo.png](/multipaste_logo.png)
 
@@ -41,7 +41,7 @@ date: 2024-09-13
 
 这个工具最终大概长这样：
 
-<iframe src="//player.bilibili.com/player.html?aid=113429197230190&bvid=BV1scDaYcEeA&cid=26625444150&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="500" height="300"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=113429197230190&bvid=BV1scDaYcEeA&cid=26625444150&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="400rem"></iframe>
 
 主要包括三个部分：
 
