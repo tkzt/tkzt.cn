@@ -24,6 +24,12 @@
         </div>
       </div>
     </div>
+
+    <!-- Politely copied from https://www.jdeal.cn/ -->
+    <div class="body-bg">
+      <div class="slider-thumb b-left"></div>
+      <div class="slider-thumb b-right"></div>
+    </div>
   </div>
 </template>
 
