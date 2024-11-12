@@ -52,17 +52,17 @@ p:has(> .prose-img) {
 }
 
 .b-left::before {
-  left: 10%;
-  bottom: 10%;
-  width: 150px;
-  height: 150px;
+  left: 8%;
+  bottom: 8%;
+  width: 250px;
+  height: 250px;
 }
 
 .b-right::before {
-  right: 10%;
+  right: 8%;
   top: 8%;
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
 }
 
 .slider-thumb::before {
