@@ -1,6 +1,6 @@
 <template>
   <div v-if="loading" class="text-sm">Loading..</div>
-  <div v-else class="flex">
+  <div v-else class="flex glitch">
     <div class="md:w-1/2 w-full">
       <BoringBlog v-for="group, index in groups" v-bind="group" :class="{ 'mt-4': index > 0 }" />
     </div>

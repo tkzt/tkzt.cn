@@ -1,8 +1,8 @@
 <template>
-  <div class="flex min-h-dvh w-full">
+  <div class="flex min-h-dvh w-full font-mono">
     <div class="ma-auto px-8% lg:px-15% 2xl:px-20% flex flex-col py-6 w-100%">
       <slot />
-      <div class="flex items-center c-gray-500 mt-6" :class="{ 'md:ml-10%': blogPage }">
+      <div class="flex items-center c-gray-500 mt-6" :class="{ 'md:ml-19%': blogPage }">
         <div class="caption">
           &copy; {{ new Date().getFullYear() }}
           <span class="ml-1">Allen Tao</span>
@@ -17,18 +17,12 @@
         </template>
         <a title="Back" class="text-btn caption" @click="$router.back()"
           v-else-if="displayBack">返回</a>
-        <router-link title="Recall" class="text-btn caption" to="/" v-else>回城</router-link>
+        <a title="Recall" class="text-btn caption" @click="goHome" v-else>回城</a>
         <div class="rotate-90 mx-3">-</div>
         <div class="flex items-center text-btn caption select-none" @click="toggleDark.call">
           {{ isDark ? '浅' : '深' }}
         </div>
       </div>
-    </div>
-
-    <!-- Politely copied from https://www.jdeal.cn/ -->
-    <div class="body-bg">
-      <div class="slider-thumb b-left"></div>
-      <div class="slider-thumb b-right"></div>
     </div>
   </div>
 </template>
@@ -36,7 +30,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
-import { useRoute } from 'vue-router';
+import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const home = computed(() => route.path === '/')
@@ -45,6 +39,10 @@ const toggleDark = useToggle(isDark)
 
 const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post'))
 const displayBack = computed(() => blogPage.value && !['/moments'].includes(route.path))
+
+function goHome() {
+  location.href = '/'
+}
 </script>
 
 <style scoped></style>

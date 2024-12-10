@@ -1,7 +1,7 @@
 <template>
   <main class="w-full">
     <ContentDoc v-slot="{ doc }">
-      <article class="md:w-80% m-auto">
+      <article class="md:w-62% m-auto">
         <div class="text-4xl font-bold">{{ doc.title }}</div>
         <div class="text-sm flex dark:c-gray-400 c-gray-500 mt-3">
           <div>{{ dayjs(doc.date).format("DD MMM, YY") }}</div>
