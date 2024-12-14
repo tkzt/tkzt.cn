@@ -17,7 +17,7 @@
         </template>
         <a title="Back" class="text-btn caption" @click="$router.back()"
           v-else-if="displayBack">返回</a>
-        <a title="Recall" class="text-btn caption" @click="goHome" v-else>回城</a>
+        <RouterLink title="Recall" class="text-btn caption" to="/" v-else>回城</RouterLink>
         <div class="rotate-90 mx-3">-</div>
         <div class="flex items-center text-btn caption select-none" @click="toggleDark.call">
           {{ isDark ? '浅' : '深' }}
@@ -30,7 +30,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
-import { useRoute } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 
 const route = useRoute()
 const home = computed(() => route.path === '/')
@@ -39,10 +39,6 @@ const toggleDark = useToggle(isDark)
 
 const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post'))
 const displayBack = computed(() => blogPage.value && !['/moments'].includes(route.path))
-
-function goHome() {
-  location.href = '/'
-}
 </script>
 
 <style scoped></style>
