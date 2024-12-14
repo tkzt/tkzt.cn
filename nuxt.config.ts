@@ -28,6 +28,5 @@ export default defineNuxtConfig({
       }
     },
   },
-  extends: '@nuxt-themes/typography',
-  plugins: ['~/plugins/glitch']
+  extends: '@nuxt-themes/typography'
 })

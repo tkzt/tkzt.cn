@@ -86,6 +86,8 @@ onMounted(async () => {
   const fp = await fpPromise
   const result = await fp.get()
   reactor.value = result.visitorId
+
+  glitchOnce()
 })
 </script>
 
