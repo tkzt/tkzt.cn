@@ -5,13 +5,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@unocss/nuxt', "@nuxt/content"],
   css: ['/main.css'],
-  nitro: {
-    storage: {
-      data: {
-        driver: "vercelKV",
-      }
-    }
-  },
   content: {
     highlight: {
       theme: {
@@ -28,5 +21,10 @@ export default defineNuxtConfig({
       }
     },
   },
-  extends: '@nuxt-themes/typography'
+  extends: '@nuxt-themes/typography',
+  runtimeConfig: {
+    public: {
+      apiBase: ''
+    }
+  }
 })

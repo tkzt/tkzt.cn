@@ -11,7 +11,7 @@
             class="link">蠡湖专科<i class="outlink">
             </i></a>，继而成为一名新生代农民工；最近在<client-only><a @click="$router.push('/moments')"
               class="link">{{
-                recentMoment.title
+                recentMoment?.title
               }}</a></client-only>；生性胆小，爱好和平，不善表达，嗜睡，同时喜爱武侠与科幻；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a
             class="link"
             @click="$router.push('/blogs/some_work_work')">屎山</a>，艰难积攒财富的同时，轻易地得到了肥胖、肩颈疾病、高血压；是一个<a
@@ -54,9 +54,12 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs'
 import { asyncComputed, useDark } from '@vueuse/core'
 import dayjs from 'dayjs'
 
+const emojiReactionKey = 'tkzt.cn'
+const { public: { apiBase } } = useRuntimeConfig()
 const isDark = useDark()
 const reactor = ref('')
 const emojis = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀']
+const emojiReactions = ref([])
 
 const fpPromise = FingerprintJS.load();
 const recentMoment = asyncComputed(async () => {
@@ -68,18 +71,32 @@ const recentMoment = asyncComputed(async () => {
 })
 
 function react(reaction) {
-  useFetch('/api/reactions', { method: 'post', body: { reaction, reactor, action: 'add' } })
+  useFetch(`${apiBase}/reactions`, { method: 'post', body: { reaction, reactor, objective: emojiReactionKey } })
 }
 
 function unreact(reaction) {
-  useFetch('/api/reactions', { method: 'post', body: { reaction, reactor, action: 'remove' } })
+  const theReaction = emojiReactions.value.find(r => r.reaction === reaction && r.reactor === reactor.value)
+  console.log(theReaction);
+
+  if (!theReaction) return
+  useFetch(`${apiBase}/reactions/${theReaction.id}`, { method: 'delete' })
 }
 
 async function getReactions() {
-  const { reactions } = await (
-    await fetch(`/api/reactions?emojis=${emojis.join(',')}`, { method: 'get' })
+  const { data } = await (
+    await fetch(`${apiBase}/reactions?objective=${emojiReactionKey}`, { method: 'get' })
   ).json()
-  return reactions || []
+  let reactions = data || []
+  emojiReactions.value = reactions
+
+  reactions = Object.entries(reactions.reduce((acc, cur) => {
+    if (!acc[cur.reaction]) acc[cur.reaction] = []
+    acc[cur.reaction].push(cur.reactor)
+    return acc
+  }, {})).map(([reaction, reactors]) => ({
+    reaction, reactors
+  }))
+  return reactions
 }
 
 onMounted(async () => {
