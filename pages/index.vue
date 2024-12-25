@@ -76,8 +76,6 @@ function react(reaction) {
 
 function unreact(reaction) {
   const theReaction = emojiReactions.value.find(r => r.reaction === reaction && r.reactor === reactor.value)
-  console.log(theReaction);
-
   if (!theReaction) return
   useFetch(`${apiBase}/reactions/${theReaction.id}`, { method: 'delete' })
 }
