@@ -17,10 +17,11 @@
             @click="$router.push('/blogs/some_work_work')">屎山</a>，艰难积攒财富的同时，轻易地得到了肥胖、肩颈疾病、高血压；是一个<a
             href="https://fine-weather-gallery.tkzt.cn" target="_blank" class="link">好天气摄影<i
               class="outlink"></i></a>爱好者；胡乱学过一些花拳绣腿，造了一些<a @click="$router.push('/boring-plans')"
-            class="link">玩具</a>；云顶之弈好玩赌狗阵容、饥荒里常选<span
-            class="line-through">伍迪</span>薇格弗德；由淮扬菜组成，更喜欢苏帮菜，最爱鸡蛋灌饼、煎饼馃子类食物；偶尔心血来潮，写一些<a
-            @click="$router.push('/boring-blogs')"
-            class="link">不堪卒读的文章</a>；喜欢看岩井俊二、姜文的电影，听宋冬野、逼哥、李宗盛、周杰伦、马飞、王菲和新裤子的歌。
+            class="link">玩具</a>；惠普精灵中心“<黑神话·悟空>速通赛”<a
+              @click="$router.push('/blogs/241229_black_myth_speed_race')"
+              class="link">冠军🏆</a>；由淮扬菜组成，更喜欢苏帮菜，最爱鸡蛋灌饼、煎饼馃子类食物；偶尔心血来潮，写一些<a
+              @click="$router.push('/boring-blogs')"
+              class="link">不堪卒读的文章</a>；喜欢看岩井俊二、姜文的电影，听宋冬野、逼哥、李宗盛、周杰伦、马飞、王菲和新裤子的歌。
         </div>
         <div class="mt-6">
           <client-only>
