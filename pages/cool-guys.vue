@@ -1,5 +1,5 @@
 <template>
-  <div class="glitch">
+  <div>
     <div class="md:text-2xl text-xl">
       <div>是的，这是一个友情链接页面。</div>
       <div>
@@ -29,3 +29,9 @@ const coolGuys = ref([
   { title: 'Jdeal', href: 'https://www.jdeal.cn/' },
 ])
 </script>
+
+<style scoped>
+ul {
+  --at-apply: list-circle pl-6.2;
+}
+</style>

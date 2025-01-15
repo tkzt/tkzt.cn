@@ -31,13 +31,16 @@
 import { computed } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import { RouterLink, useRoute } from 'vue-router'
+import { usePageLoading } from '~/composables/page-loading'
 
 const route = useRoute()
 const home = computed(() => route.path === '/')
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+const { pageLoading } = usePageLoading()
 
-const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post'))
+const blogPage = computed(() =>
+  route.matched.at(0)?.path.startsWith('/:post') && !pageLoading.value)
 const displayBack = computed(() => blogPage.value && !['/moments'].includes(route.path))
 </script>
 

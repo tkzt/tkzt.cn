@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center flex-wrap flex-col flex-col-reverse md:flex-row">
     <div class="w-100% shrink-0 md:w-50% mt-6 md:mt-0">
-      <div class="ma-auto tracking-.37 glitch">
+      <div class="ma-auto tracking-.37">
         <div class="md:text-5xl text-2xl">你好。</div>
         <div class="my-6 md:text-2xl text-xl">
           这是陶康的主页。此人：
@@ -102,8 +102,6 @@ onMounted(async () => {
   const fp = await fpPromise
   const result = await fp.get()
   reactor.value = result.visitorId
-
-  glitchOnce()
 })
 </script>
 

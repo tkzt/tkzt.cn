@@ -1,5 +1,5 @@
 <template>
-    <div class="glitch">
+    <div>
         <div class="plain md:text-2xl text-xl">与君初相识，犹如故人归。嗨，别来无恙啊！</div>
         <ul class="mt-6">
             <li>Github: <a href="https://github.com/tkzt" target="_blank"

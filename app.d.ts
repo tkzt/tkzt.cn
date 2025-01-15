@@ -13,5 +13,3 @@ interface BlogResponse {
   link: string
   date: string
 }
-
-declare module 'powerglitch'
