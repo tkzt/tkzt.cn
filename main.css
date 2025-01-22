@@ -29,5 +29,5 @@ p:has(> .prose-img) {
 }
 
 .prose-p {
-  --at-apply: text-justify tracking-wide;
+  --at-apply: tracking-wide;
 }

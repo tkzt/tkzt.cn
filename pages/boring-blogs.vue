@@ -1,10 +1,10 @@
 <template>
   <div v-if="loading" class="text-sm">Loading..</div>
   <div v-else class="flex">
-    <div class="md:w-1/2 w-full">
+    <div class="md:w-1/2 w-full md:py-10 py-6">
       <BoringBlog v-for="group, index in groups" v-bind="group" :class="{ 'mt-4': index > 0 }" />
     </div>
-    <div class="grow md:relative hidden md:block">
+    <div class="grow md:relative" v-if="showImg">
       <div class="sticky top-0 h-100dvh flex items-center justify-end">
         <img :src="currBg" class="object-contain w-2/3 rounded" />
       </div>
@@ -15,10 +15,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import BoringBlog from '~/components/BoringBlog.vue'
-import { useWindowScroll } from '@vueuse/core'
+import { useWindowScroll, useWindowSize } from '@vueuse/core'
 import dayjs from 'dayjs'
 
 const bgArr = [
+  "https://fine-weather-gallery.tkzt.cn/thumbnail/IMG_2093.jpeg",
   "https://fine-weather-gallery.tkzt.cn/thumbnail/1651708223546_.pic.jpg",
   "https://fine-weather-gallery.tkzt.cn/thumbnail/321686466094_.pic_hd.jpg",
   "https://fine-weather-gallery.tkzt.cn/thumbnail/16.jpg",
@@ -26,15 +27,17 @@ const bgArr = [
   "https://fine-weather-gallery.tkzt.cn/thumbnail/10.jpg",
   "https://fine-weather-gallery.tkzt.cn/thumbnail/14.jpg",
   "https://fine-weather-gallery.tkzt.cn/thumbnail/20.jpg",
-  'https://fine-weather-gallery.tkzt.cn/thumbnail/19.jpg',
+  "https://fine-weather-gallery.tkzt.cn/thumbnail/19.jpg",
 ]
 
 const groups = ref<BlogGroup[]>([])
 const loading = ref(false)
+const { width } = useWindowSize()
 
 const { y } = useWindowScroll()
 
-const currBg = computed(() => bgArr[Math.min(bgArr.length - 1, Math.floor(y.value / (document?.documentElement.scrollHeight || 1) * bgArr.length))])
+const showImg = computed(() => width.value > 768)
+const currBg = computed(() => showImg ? bgArr[Math.min(bgArr.length - 1, Math.floor(y.value / (document?.documentElement.scrollHeight || 1) * bgArr.length))] : '')
 
 onMounted(async () => {
   loading.value = true

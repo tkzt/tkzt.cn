@@ -2,7 +2,7 @@
   <div class="flex min-h-dvh w-full font-mono">
     <div class="ma-auto px-8% lg:px-15% 2xl:px-20% flex flex-col py-6 w-100%">
       <slot />
-      <div class="flex items-center c-gray-500 mt-6" :class="{ 'md:ml-19%': blogPage }">
+      <div class="flex items-center c-gray-500 mt-6">
         <div class="caption">
           &copy; {{ new Date().getFullYear() }}
           <span class="ml-1">Allen Tao</span>
@@ -15,7 +15,8 @@
             <router-link title="Contact" class="text-btn caption" to="/contact">联系</router-link>
           </div>
         </template>
-        <a title="Back" class="text-btn caption" @click="$router.back()"
+        <a title="Back" class="text-btn caption"
+          @click="$router.push(blogPage ? '/boring-blogs' : '/moments')"
           v-else-if="displayBack">返回</a>
         <RouterLink title="Recall" class="text-btn caption" to="/" v-else>回城</RouterLink>
         <div class="rotate-90 mx-3">-</div>
@@ -31,16 +32,13 @@
 import { computed } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
 import { RouterLink, useRoute } from 'vue-router'
-import { usePageLoading } from '~/composables/page-loading'
 
 const route = useRoute()
 const home = computed(() => route.path === '/')
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
-const { pageLoading } = usePageLoading()
 
-const blogPage = computed(() =>
-  route.matched.at(0)?.path.startsWith('/:post') && !pageLoading.value)
+const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post'))
 const displayBack = computed(() => blogPage.value && !['/moments'].includes(route.path))
 </script>
 

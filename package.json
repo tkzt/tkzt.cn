@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@fingerprintjs/fingerprintjs": "^4.2.2",
+    "@fingerprintjs/fingerprintjs": "^4.5.1",
     "@iconify-json/mdi": "^1.1.66",
     "@nuxt-themes/typography": "^1.0.1",
     "@nuxt/content": "^2.12.1",

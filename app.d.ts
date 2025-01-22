@@ -13,3 +13,9 @@ interface BlogResponse {
   link: string
   date: string
 }
+
+interface BlogToc {
+  title: string
+  level: number
+  items: BlogToc[]
+}

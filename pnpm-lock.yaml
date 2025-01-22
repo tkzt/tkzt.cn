@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@fingerprintjs/fingerprintjs':
-    specifier: ^4.2.2
-    version: 4.2.2
+    specifier: ^4.5.1
+    version: 4.5.1
   '@iconify-json/mdi':
     specifier: ^1.1.66
     version: 1.1.66
@@ -871,8 +871,8 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /@fingerprintjs/fingerprintjs@4.2.2:
-    resolution: {integrity: sha512-scD+pDgNZW78LuFAr7ms2yxmDx2NWC4+K5iiOjPT2ZlTlHFbLsORUzLJI2rcKicxxLtHbvf3A7BU1drVr4iHGg==}
+  /@fingerprintjs/fingerprintjs@4.5.1:
+    resolution: {integrity: sha512-hKJaRoLHNeUUPhb+Md3pTlY/Js2YR4aXjroaDHpxrjoM8kGnEFyZVZxXo6l3gRyKnQN52Uoqsycd3M73eCdMzw==}
     dependencies:
       tslib: 2.6.2
     dev: true

@@ -16,10 +16,6 @@ export default defineNuxtConfig({
     }
   },
 
-  plugins: [
-    '~/plugins/page-loading.ts',
-  ],
-
   vite: {
     vue: {
       script: {

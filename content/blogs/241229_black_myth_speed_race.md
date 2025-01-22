@@ -24,6 +24,6 @@ date: 2024-12-29
 
 ![bmsr6.png](/bmsr6.png)
 
-辉哥在几个月前（2024/9/16）有提到[玩黑猴让他想到小时候玩游戏的时光](https://greyli.com/histories/)，对此，我觉得**不能同意更多**。而这次比赛，则让我有机会对内心关于合理利用时间的内耗情绪施展[定身法](https://wiki.biligame.com/wukong/%E5%AE%9A%E8%BA%AB%E6%B3%95)，让吸收了太多[工业废水](https://baike.baidu.com/item/%E6%88%91%E5%92%BD%E4%B8%8B%E4%B8%80%E6%9E%9A%E9%93%81%E5%81%9A%E7%9A%84%E6%9C%88%E4%BA%AE%E2%80%A6%E2%80%A6/61161043)的体魄灵魂得以喘息片刻。
+辉哥在几个月前（2024/9/16）有提到[玩黑猴让他想到小时候玩游戏的时光](https://greyli.com/histories/#lwptoc33)，对此，我觉得**不能同意更多**。而这次比赛，则让我有机会对内心关于合理利用时间的内耗情绪施展[定身法](https://wiki.biligame.com/wukong/%E5%AE%9A%E8%BA%AB%E6%B3%95)，让吸收了太多[工业废水](https://baike.baidu.com/item/%E6%88%91%E5%92%BD%E4%B8%8B%E4%B8%80%E6%9E%9A%E9%93%81%E5%81%9A%E7%9A%84%E6%9C%88%E4%BA%AE%E2%80%A6%E2%80%A6/61161043)的体魄灵魂得以喘息片刻。
 
 是的，但由于*道行浅薄，这定身效果不消片刻就会失灵*。
