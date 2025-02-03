@@ -34,7 +34,7 @@
     </div>
     <div class="grow-1 items-center flex md:(justify-end md:mt-0) mt-6 justify-center">
       <div class="relative">
-        <img src="https://images.tkzt.cn/fine-weather/thumbnail/1.jpg"
+        <img src="https://fine-weather-gallery.tkzt.cn/thumbnail/1.jpg"
           class="md:w-300px w-100% min-w-300px min-h-200px dark:bg-[rgba(0,0,0,.37)] bg-[rgba(0,0,0,.05)] rounded" />
         <div class="text-right caption mt-1 text-xs md:(text-sm mt-3)">
           2020
@@ -56,13 +56,12 @@ import { asyncComputed, useDark } from '@vueuse/core'
 import dayjs from 'dayjs'
 
 const emojiReactionKey = 'tkzt.cn'
-const { public: { apiBase } } = useRuntimeConfig()
 const isDark = useDark()
+const { public: { apiBase } } = useRuntimeConfig()
 const reactor = ref('')
 const emojis = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀']
 const emojiReactions = ref([])
 
-const fpPromise = FingerprintJS.load();
 const recentMoment = asyncComputed(async () => {
   const moments = (await queryContent('moments').find()).filter(m => m._path !== '/moments').sort((a, b) => (dayjs(b.date).diff(dayjs(a.date))) || 1)
   return moments[0] || {
@@ -99,7 +98,7 @@ async function getReactions() {
 }
 
 onMounted(async () => {
-  const fp = await fpPromise
+  const fp = await FingerprintJS.load();
   const result = await fp.get()
   reactor.value = result.visitorId
 })

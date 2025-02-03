@@ -13,6 +13,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { TocLink } from '@nuxt/content/types'
+import type { TocLink } from '@nuxt/content'
 defineProps<TocLink>()
 </script>

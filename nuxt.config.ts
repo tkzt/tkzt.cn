@@ -31,4 +31,6 @@ export default defineNuxtConfig({
       apiBase: ''
     }
   },
+
+  compatibilityDate: '2025-02-04',
 })

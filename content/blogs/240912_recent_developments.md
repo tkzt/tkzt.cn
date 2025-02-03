@@ -16,6 +16,6 @@ date: 2024-09-12
 - 由于粗糙的私有部署无法扩展无法迭代升级而无比卡顿的 JIRA, Confluence, Gitlab, etc.
 - KPI 产物，基于 Electron 的内存杀手，内部 IM App
 
-最后，壬寅年度计划：
+最后，甲辰年年度计划：
 
 *extends([癸卯年年度计划](/blogs/230118_goals-of-guimao))*

@@ -1,6 +1,6 @@
 This is a REPO for my homepage: [tkzt.cn](https://tkzt.cn).
 
-Tech used:
+Mainly built on:
 
 - [NuxtJS](https://nuxt.com/)
 - [VueUse](https://vueuse.org/)
