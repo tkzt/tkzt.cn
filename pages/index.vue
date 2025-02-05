@@ -9,7 +9,7 @@
         <div class="text-sm md:text-4 lh-6.18 tracking-.37 text-justify">
           于 2019 年毕业于<a href="https://www.bing.com/search?q=%E8%A0%A1%E4%B8%93" target="_blank"
             class="link">蠡湖专科<i class="outlink">
-            </i></a>，继而成为一名新生代农民工；最近在<client-only><a @click="$router.push('/moments')"
+            </i></a>，继而成为一名新生代农民工；最近在<client-only><a @click="$router.push(recentMoment?._path)"
               class="link">{{
                 recentMoment?.title
               }}</a></client-only>；生性胆小，爱好和平，不善表达，嗜睡，同时喜爱武侠与科幻；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a

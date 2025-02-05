@@ -2,7 +2,8 @@
   <div v-if="loading" class="text-sm">Loading..</div>
   <div v-else class="flex">
     <div class="md:w-1/2 w-full md:py-10 py-6">
-      <BoringBlog v-for="group, index in groups" v-bind="group" :class="{ 'mt-4': index > 0 }" />
+      <BoringBlog v-for="group, index in groups" v-bind="group"
+        :class="{ 'mt-4': index > 0, 'pb-4': index < groups.length - 1 }" />
     </div>
     <div class="grow md:relative" v-if="showImg">
       <div class="sticky top-0 h-100dvh flex items-center justify-end">

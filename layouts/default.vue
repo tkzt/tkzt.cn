@@ -38,8 +38,9 @@ const home = computed(() => route.path === '/')
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
-const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post'))
-const displayBack = computed(() => blogPage.value && !['/moments'].includes(route.path))
+const momentsPage = computed(() => route.fullPath.startsWith('/moments'))
+const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post') && !momentsPage.value)
+const displayBack = computed(() => blogPage.value || momentsPage.value && route.fullPath !== "/moments")
 </script>
 
 <style scoped></style>
