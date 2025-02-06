@@ -64,6 +64,7 @@ date: 2025-02-02
 7/6 - 8/3
 
 - 代码厨房开源松 [Sprint 5](https://codekitchen.community/t/topic/1374)（线下）。高中毕业以来，第一次站到讲台上，熟悉的紧张感将一位 ISTP 杀得片甲不留
+  ![sprint5.jpg](/sprint5.jpg)
 - 终于完成 Sprint 4 接的一个 Rust 项目的[任务](https://codekitchen.community/t/topic/1286)，并~~荣获~~获得“第一个吃螃蟹的人”徽章
   ![first_to_eat_crab.png](/first_to_eat_crab.png)
 
@@ -73,6 +74,7 @@ date: 2025-02-02
 
 - 一场可以快乐摸鱼但实质很枯燥的 [Google Cloud 培训](https://teamwork.getech.cn/static/ser/index.html?serId=305&idx=0&materialId=34818#/)
 - 面对高出若干个 W¥ 的 Counter Offer，回想[上三年度的经历](https://tkzt.cn/blogs/240912_recent_developments)，还是选择跳槽
+- 《黑神话：悟空》发行后第一时间体验，80+ 小时首次通关（不戴金箍结局）
 
 ### 八月
 
@@ -97,7 +99,9 @@ date: 2025-02-02
 
 - 五月天「回到那一天」巡回演唱会上海站。由于抢票经验有限 + 对此团体近年关注下降 + 运气欠佳，最终抢（其实真要抢的票是抢不到的，实际是稀里糊涂就下了单）了个位置差劲且不便宜的票。此时的陶某，经过岁月的浸泡，听到那些熟悉的旋律已经不甚触动，补一张票罢了
 - 参加 PyCon China 2024（感谢辉哥赠票），并[在代码厨房分会场参加 Sprint 6](https://codekitchen.community/t/topic/1352)。再一次上台大放厥词，依然难以自得，还得练
-- 基于 Rust 开发了一个打印盒 U 盘热备份、恢复程序。程序开发并不复杂，心智负担主要由~与一些老头的无效沟通、容忍一些老法师的自以为是~带来
+  ![sprint6.jpg](/sprint6.jpg)
+- 基于 Rust 开发了一个打印盒 U 盘热备份、恢复程序。程序开发并不复杂，心智负担主要由 _与一些老头的无效沟通、容忍一些老法师的自以为是_ 带来
+- 参加公司举办的黑猴速通赛，从此下班后很大一部分时间被快速消耗
 
 ### 十一月
 
@@ -111,6 +115,7 @@ date: 2025-02-02
   - 定慧寺
   ![dinghui_temple.jpg](/dinghui_temple.jpg)
 - 对接钉钉、飞书、企微 Oauth2，写很多只会被 `implement` 一次的接口，机械地 🤷 接受老法师的一些过度设计
+- 黑猴速通赛结束，最终[取得冠军 🏆](/blogs/241229_black_myth_speed_race)
 
 ### 腊月
 
@@ -140,3 +145,5 @@ date: 2025-02-02
 - [ ] 努力减重（暂定 80kg）
 - [ ] Multipaste v1.0
 - [ ] Boring Days v3.0
+- [ ] 学习像素（动）画
+- [ ] 赴港开户 📈
