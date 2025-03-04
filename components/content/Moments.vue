@@ -17,7 +17,7 @@
 import { asyncComputed } from '@vueuse/core'
 import dayjs from 'dayjs'
 
-const moments = asyncComputed(async () => (await queryContent('moments').find()).filter(m => m._path !== '/moments').sort((a, b) => (dayjs(b.date).diff(dayjs(a.date))) || 1).map(({ title, date, _path }) => ({ title, date, _path })))
+const moments = asyncComputed(async () => (await queryContent('logs').find()).filter(m => m._path !== '/logs').sort((a, b) => (dayjs(b.date).diff(dayjs(a.date))) || 1).map(({ title, date, _path }) => ({ title, date, _path })))
 </script>
 
 <style scoped>

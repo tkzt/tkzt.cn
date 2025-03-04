@@ -63,7 +63,7 @@ const emojis = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀'
 const emojiReactions = ref([])
 
 const recentMoment = asyncComputed(async () => {
-  const moments = (await queryContent('moments').find()).filter(m => m._path !== '/moments').sort((a, b) => (dayjs(b.date).diff(dayjs(a.date))) || 1)
+  const moments = (await queryContent('logs').find()).filter(m => m._path !== '/logs').sort((a, b) => (dayjs(b.date).diff(dayjs(a.date))) || 1)
   return moments[0] || {
     title: '...',
     _path: '/'

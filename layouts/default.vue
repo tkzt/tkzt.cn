@@ -16,8 +16,7 @@
           </div>
         </template>
         <a title="Back" class="text-btn caption"
-          @click="$router.push(blogPage ? '/boring-blogs' : '/moments')"
-          v-else-if="displayBack">返回</a>
+          @click="$router.push(blogPage ? '/boring-blogs' : '/logs')" v-else-if="displayBack">返回</a>
         <RouterLink title="Recall" class="text-btn caption" to="/" v-else>回城</RouterLink>
         <div class="rotate-90 mx-3">-</div>
         <div class="flex items-center text-btn caption select-none" @click="toggleDark.call">
@@ -38,9 +37,9 @@ const home = computed(() => route.path === '/')
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
-const momentsPage = computed(() => route.fullPath.startsWith('/moments'))
+const momentsPage = computed(() => route.fullPath.startsWith('/logs'))
 const blogPage = computed(() => route.matched.at(0)?.path.startsWith('/:post') && !momentsPage.value)
-const displayBack = computed(() => blogPage.value || momentsPage.value && route.fullPath !== "/moments")
+const displayBack = computed(() => blogPage.value || momentsPage.value && route.fullPath !== "/logs")
 </script>
 
 <style scoped></style>

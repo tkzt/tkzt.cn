@@ -14,7 +14,7 @@
           <ContentRenderer :value="doc" />
         </div>
         <ClientOnly>
-          <template v-if="!$route.fullPath.startsWith('/moments') && doc.body?.toc?.links">
+          <template v-if="!$route.fullPath.startsWith('/logs') && doc.body?.toc?.links">
             <div v-if="!mdAndMore" class="fixed top-6 right-6 max-w-50% text-right">
               <Icon name="mdi:table-of-contents" class="text-2xl cursor-pointer"
                 @click="showToc = !showToc" />
