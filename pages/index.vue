@@ -54,11 +54,11 @@ import { EmojiReaction } from 'emoji-reaction/lib/index.esm'
 import FingerprintJS from '@fingerprintjs/fingerprintjs'
 import { asyncComputed, useDark } from '@vueuse/core'
 import dayjs from 'dayjs'
+import { emojis } from '~~/shared/constants'
 
 const emojiReactionKey = 'tkzt.cn'
 const isDark = useDark()
 const reactor = ref('')
-const emojis = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀']
 const emojiReactions = ref([])
 
 const recentMoment = asyncComputed(async () => {
@@ -70,30 +70,21 @@ const recentMoment = asyncComputed(async () => {
 })
 
 function react(reaction) {
-  useFetch('/api/reactions', { method: 'post', body: { reaction, reactor, to: emojiReactionKey } })
+  useFetch('/api/reactions', { method: 'post', body: { reaction, reactor } })
 }
 
 function unreact(reaction) {
-  const theReaction = emojiReactions.value.find(r => r.reaction === reaction && r.reactor === reactor.value)
+  const theReaction = emojiReactions.value.find(r => r.reaction === reaction && r.reactors.includes(reactor.value))
   if (!theReaction) return
-  useFetch(`/api/reactions/${theReaction.id}`, { method: 'delete' })
+  useFetch('/api/reactions', { method: 'delete', body: { reaction, reactor } })
 }
 
 async function getReactions() {
   const { data } = await useFetch('/api/reactions', {
     method: 'GET',
-    params: { to: emojiReactionKey }
   })
   let reactions = data.value || []
   emojiReactions.value = reactions
-
-  reactions = Object.entries(reactions.reduce((acc, cur) => {
-    if (!acc[cur.reaction]) acc[cur.reaction] = []
-    acc[cur.reaction].push(cur.reactor)
-    return acc
-  }, {})).map(([reaction, reactors]) => ({
-    reaction, reactors
-  }))
   return reactions
 }
 

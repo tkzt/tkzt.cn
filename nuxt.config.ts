@@ -7,14 +7,10 @@ export default defineNuxtConfig({
   css: ['/main.css'],
 
   nitro: {
-    experimental: {
-      database: true
-    },
-    database: {
-      default: {
-        connector: 'sqlite',
-        options: { name: 'db' }
-      },
+    storage: {
+      data: {
+        driver: 'vercelKV'
+      }
     }
   },
 

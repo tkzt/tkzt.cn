@@ -18,11 +18,9 @@ export default defineEventHandler(async (event) => {
   }
 
   const dataStorage = useStorage('data')
-  const reactors = (await dataStorage.getItem(reaction))?.toString().split(',') || []
-  if (!reactors.includes(reactorString))
-    reactors.push(reactorString)
-  await dataStorage.setItem(reactionString, reactors.join(','))
+  let reactors = (await dataStorage.getItem(reaction))?.toString().split(',') || []
+  reactors = reactors.filter((r: string) => r !== reactorString)
+  await dataStorage.setItem(reactionString, reactors.join(',') || null)
 
-  setResponseStatus(event, 201)
-  return { reaction, reactors }
+  setResponseStatus(event, 204)
 })
