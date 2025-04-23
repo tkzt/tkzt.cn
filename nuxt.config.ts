@@ -6,6 +6,19 @@ export default defineNuxtConfig({
   modules: ['@unocss/nuxt', "@nuxt/content"],
   css: ['/main.css'],
 
+  nitro: {
+    experimental: {
+      database: true
+    },
+    database: {
+      default: {
+        connector: 'sqlite',
+        options: { name: 'db' }
+      },
+    }
+  },
+
+
   content: {
     highlight: {
       theme: {

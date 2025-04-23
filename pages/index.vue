@@ -27,7 +27,7 @@
           <client-only>
             <!-- Since using `isDark`, so client only. -->
             <emoji-reaction :reactor="reactor" :react="react" :unreact="unreact"
-              :getReactions="getReactions" :dark="isDark" :emojis="emojis" />
+              :getReactions="getReactions" :dark="isDark" :emojis="emojis" v-if="reactor" />
           </client-only>
         </div>
       </div>
@@ -57,7 +57,6 @@ import dayjs from 'dayjs'
 
 const emojiReactionKey = 'tkzt.cn'
 const isDark = useDark()
-const { public: { apiBase } } = useRuntimeConfig()
 const reactor = ref('')
 const emojis = ['👍', '👎', '😄', '🎉', '😕', '❤️', '🚀', '👀']
 const emojiReactions = ref([])
@@ -71,20 +70,21 @@ const recentMoment = asyncComputed(async () => {
 })
 
 function react(reaction) {
-  useFetch(`${apiBase}/reactions`, { method: 'post', body: { reaction, reactor, objective: emojiReactionKey } })
+  useFetch('/api/reactions', { method: 'post', body: { reaction, reactor, to: emojiReactionKey } })
 }
 
 function unreact(reaction) {
   const theReaction = emojiReactions.value.find(r => r.reaction === reaction && r.reactor === reactor.value)
   if (!theReaction) return
-  useFetch(`${apiBase}/reactions/${theReaction.id}`, { method: 'delete' })
+  useFetch(`/api/reactions/${theReaction.id}`, { method: 'delete' })
 }
 
 async function getReactions() {
-  const { data } = await (
-    await fetch(`${apiBase}/reactions?objective=${emojiReactionKey}`, { method: 'get' })
-  ).json()
-  let reactions = data || []
+  const { data } = await useFetch('/api/reactions', {
+    method: 'GET',
+    params: { to: emojiReactionKey }
+  })
+  let reactions = data.value || []
   emojiReactions.value = reactions
 
   reactions = Object.entries(reactions.reduce((acc, cur) => {
