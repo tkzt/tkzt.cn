@@ -5,7 +5,7 @@ const rateLimiter = new RateLimiterMemory({
   duration: 60,
 })
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   try {
     await rateLimiter.consume(1)
     return
