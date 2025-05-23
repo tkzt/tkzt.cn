@@ -12,12 +12,14 @@
             </i></a>，继而成为一名新生代农民工；最近在<client-only><a @click="$router.push(recentMoment?._path)"
               class="link">{{
                 recentMoment?.title
-              }}</a></client-only>；生性胆小，爱好和平，不善表达，嗜睡，同时喜爱武侠与科幻；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a
-            class="link"
-            @click="$router.push('/blogs/some_work_work')">屎山</a>，艰难积攒财富的同时，轻易地得到了肥胖、肩颈疾病、高血压；是一个<a
+              }}</a></client-only>；生性胆小，爱好和平，不善表达，嗜睡；是一个<a
             href="https://fine-weather-gallery.tkzt.cn" target="_blank" class="link">好天气摄影<i
-              class="outlink"></i></a>爱好者；胡乱学过一些花拳绣腿，造了一些<a @click="$router.push('/boring-plans')"
-            class="link">玩具</a>；惠普精灵中心“<黑神话·悟空>速通赛”<a
+              class="outlink"></i></a>爱好者；先后在南京、上海、无锡、上海痛恨、改造、亲手堆砌过若干座<a class="link"
+            @click="$router.push('/blogs/some_work_work')">屎山</a>，艰难积攒财富的同时，轻易地得到了肥胖、肩颈疾病、高血压；胡乱学过一些花拳绣腿，造了一些<a
+            @click="$router.push('/boring-plans')" class="link">玩具</a>；偶尔用<a
+            href="https://ifdian.net/a/allen_tao_o" target="_blank"
+            class="link">爱发电</a>，为开源事业贡献一些微不足道的<a href="https://github.com/tkzt" target="_blank"
+            class="link">力量</a>；惠普精灵中心“<黑神话·悟空>速通赛”<a
               @click="$router.push('/blogs/241229_black_myth_speed_race')"
               class="link">冠军🏆</a>；由淮扬菜组成，更喜欢苏帮菜，最爱鸡蛋灌饼、煎饼馃子类食物；偶尔心血来潮，写一些<a
               @click="$router.push('/boring-blogs')"
