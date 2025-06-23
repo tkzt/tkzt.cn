@@ -17,6 +17,12 @@ const works = [
     title: '🥳',
     list: [
       {
+        title: 'Adskipper',
+        link: 'https://github.com/tkzt/adskipper',
+        logo: 'https://raw.githubusercontent.com/tkzt/adskipper/563f2d73da7d452512ea82f13d530af02832189b/res/adskipper.svg',
+        description: '澳门新葡京达咩',
+      },
+      {
         title: 'Multipaste',
         link: 'https://github.com/tkzt/multipaste',
         logo: 'https://raw.githubusercontent.com/tkzt/multipaste/1b629400649a8f1797ba856d9b2fdd79c05e69e7/src-tauri/icons/icon.ico',
@@ -49,7 +55,7 @@ const works = [
       {
         title: 'DDT Sharp Shooter',
         link: 'https://github.com/tkzt/ddt-sharp-shooter',
-        logo: 'https://raw.githubusercontent.com/tkzt/ddt-sharp-shooter/3e0d2fc02e0c6f3605bb818294400c5d8b1cee07/assets/logo.svg',
+        logo: 'https://raw.githubusercontent.com/tkzt/ddt-sharp-shooter/refs/heads/main/assets/logo.ico',
         description: '熟悉的 BGM 响起，事情却不一样了起来',
       },
       {
